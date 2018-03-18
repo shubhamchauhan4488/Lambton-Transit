@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Materialize Example</title>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+        </script>
+        
+    <style type="text/css">
+        #top-header{
+            font-family: Proxima Nova Soft, Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 60px;
+            color: #fe426f;
+            font-weight: bold;
+            }
+      #title{
+          color:black;
+      }
+      #overlay {
+        position: fixed;
+        display: none;
+        margin: 0 auto;
+    
+        width: 300px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.0);
+        z-index: 2;
+        cursor: pointer;
+    }
+    .container{
+        width: 900px;
+        margin: 0 auto;
+    }
+      #dist{
+          color:black;
+      }
+      #no{
+          margin-right: 10px;
+          width: 60px;
+      }
+      #super{
+          margin-right: 10px;
+          
+      }
+      .card{
+        width: 800px;
+        max-width:95%;
+        margin: 0 auto;  
+      }
+    
+    </style>
+  
+    
+    </head>
+<body>
+        <script type="text/javascript">
+                var people = [];
+                var i=0;
+                people.push({"name":"Rose","age":"22","distance":"12km","image":"girl1.jpg"});
+                people.push({"name":"Adele","age":"24","distance":"10km","image":"girl2.jpg"});
+                people.push({"name":"Lisa","age":"19","distance":"10km","image":"girl3.jpg"});
+               var title = people[0].name + "," + people[0].age ;
+               var dist = people[0].distance;   
+             
+             function nope(){
+              
+                i++;
+                document.getElementById("dynamic-image").src = "like-image.png";
+                document.getElementById("myImage").src = people[i].image;
+                document.getElementById("title").innerHTML = people[i].name + "," + people[i].age;
+                document.getElementById("dist").innerHTML = people[i].distance;  
+             }
+             function like(){
+                console.log("asdadadada")
+                i++;
+                document.getElementById("myImage").src = people[i].image;
+                document.getElementById("title").innerHTML = people[i].name + "," + people[i].age;
+                document.getElementById("dist").innerHTML = people[i].distance;
+                on();   
+             }
+             function on() {
+               document.getElementById("overlay").style.display = "block";
+               $("#overlay").fadeOut(3000);
+                }
+
+            function off() {
+                document.getElementById("overlay").style.display = "none";
+            }
+
+            function reveal(){
+                document.getElementById("reveal-info").innerHTML = people[i].name + "," + people[i].age;
+            }
+            function unreveal(){
+                console.log("sdfada");
+            }
+
+            $(document).ready(function() {
+                 $("#title").prepend(title);
+                 $("#dist").append(dist);
+            });
+
+         </script>
+
+    <div class="container">
+
+    <div class="row center-align">
+        <div class="col s12" id="top-header">
+            tinder
+        </div>
+    <div class="row center-align  ">
+        <div class="col s12" id="main-card">
+          <div class="card panel hoverable">     
+            <div class="card-image waves-effect waves-block waves-light" id="brief-info">
+                <img class="activator" src="girl1.jpg" id="myImage">
+                <p class="card-title" id="title"></p>
+                <span class="card-title" id ="dist"></span>
+                <div id="overlay">
+                    <div>
+                        <img src="nope/img.png" class="valign">
+                    </div>
+                </div>
+                  
+            </div>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light activator red"  onclick="reveal()"><i class="fa fa-arrow-up" style="color:white" aria-hidden="true"></i></a>
+            <div class="card-reveal" id="reveal-div">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right" >close</i></span>
+                <p id="reveal-info"></p>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="row center-align">
+            <div class="col s12 ">
+      <div class="card-action">
+            
+            <a class="btn-floating btn-large waves-effect waves-light white" id="no" onclick="nope()"><i class="fa fa-times" style="color:red;font-size:33px" aria-hidden="true"></i></a>
+            <a class="btn-floating btn-large waves-effect waves-light white" id="super" ><i class="fa fa-star" style="color:blue;font-size:25px"  aria-hidden="true"></i> </a>
+            <a class="btn-floating btn-large waves-effect waves-light white" id="yes" onclick="like()" ><i class="fa fa-heart" style="color:green;font-size:30px" aria-hidden="true"></i></a>
+           
+            
+         </div>
+         
+      </div>
+      </div>
+      </div>
+</body>
+</html>

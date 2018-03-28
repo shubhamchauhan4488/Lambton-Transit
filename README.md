@@ -1,2 +1,2 @@
 # Lambton-Transit
-<img src="screenshots/login" />
+<img src="screenshots/Login.png" />

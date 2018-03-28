@@ -30,11 +30,11 @@
 
   // @TODO: your database code should  here
     //---------------------------------------------------
-    require("../dbconnection.php");
+    // require("../dbconnection.php");
+    // $connection = mysqli_connect('localhost','root','root','transit');
     $connection = connect();
 
-    $sql 	 = "SELECT * FROM route ";
-    $sql 	.= "WHERE route_id='" . $id . "'";
+    $sql 	 = "SELECT * FROM route WHERE route_id='" . $id . "'";
 
     $results = mysqli_query($connection, $sql);
           
@@ -63,7 +63,7 @@
         // 5. Close database connection
         mysqli_close($connection);
         echo "SQL command: " . $sql2;
-        header("Location: " . "tables-basic.php"); 
+        header("Location: " . "index.php"); 
     }
   }
 
@@ -80,7 +80,7 @@
         <div id="right-panel" class="right-panel">
 
 <!-- Header-->
-><!-- /header -->
+<!-- /header -->
 <!-- Header-->
 
 
@@ -91,34 +91,26 @@
         <div class="row">
         <div class="col-lg-12">
             <div class="card">
-              <div class="card-header"><strong>ADD User</strong><small> Form</small>
+              <div class="card-header"><strong>Delete </strong><small></small>
               </div>
               <div class="card-body card-block">
-                
-              <div class="col-md-6">
-              <div class="card bg-primary">
-                  <div class="card-body">
-                      <blockquote class="blockquote mb-0 text-light">
-                          <p class="text-light">
-                          Route ID : <?php echo $routes["route_id"] ?> <br>
-                          Source : <?php echo $routes["from_address"] ?> <br>
-                          Destination : <?php echo $routes["to_address"] ?> <br>
-                          Time : <?php echo $routes["time"] ?> 
-                          </p>
-              </blockquote>
-              </div>
-           </div>
-       
+              
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                 <div class="card">
                 <div class="card-header bg-dark">
                     <strong class="card-title text-light">Confirm Delete</strong>
                 </div>
                 <div class="card-body text-white bg-danger">
+                <p class="text-light">
+                          Route ID : <?php echo $routes["route_id"] ?> <br>
+                          Source : <?php echo $routes["from_address"] ?> <br>
+                          Destination : <?php echo $routes["to_address"] ?> <br>
+                          Time : <?php echo $routes["time"] ?> 
+                    </p>
                     <p class="card-text text-light">This delete is irreversible. Click on button below to proceed</p>
                     <form action = "<?php echo "delete-route.php?id=" . $id; ?>" method = "POST">
-                    <input type = "submit" value = "Yes">
+                    <input type = "submit" value = "Yes" style = "color:black;">
                     </form> 
                 </div>
                 </div>

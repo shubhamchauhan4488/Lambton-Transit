@@ -64,7 +64,7 @@ session_start();
         <div class="row">
         <div class="col-lg-12">
             <div class="card">
-              <div class="card-header"><strong>ADD User</strong><small> Form</small>
+              <div class="card-header"><strong>Logout</strong><small></small>
               </div>
               <div class="card-body card-block">
        

@@ -21,7 +21,7 @@
 <p>Next Bus screen : Allows the students/users to view the next bus in the schedule</p>
 <img src="screenshots/NextBus.png" />
 <p>Book Bus screen : Allows the students/users to book a bus ticket</p>
-<img src="screenshots/BookTicket1.png" />
+<img src="screenshots/BookTlcket1.png" />
 <p>Book Bus screen : Allows the students/users to view thier bar code for the ticket</p>
 <img src="screenshots/BookTicket2.png" />
 
